@@ -25,7 +25,7 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
 export const authorizeRole = (...roles: string[]) => {
     return (req: Request, res: Response, next: NextFunction) => {
         if (!req.user || !roles.includes(req.user.role)) {
-            sendResponse(res, StatusCodes.FORBIDDEN, "Access denied, insufficient permission");
+            sendResponse(res, StatusCodes.FORBIDDEN, "Access denied, insufficient permission",undefined,"Insufficient permission");
             return;
         };
         next();

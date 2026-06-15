@@ -5,6 +5,8 @@ import { StatusCodes } from "http-status-codes";
 import { sql } from "../../db";
 import bcrypt from "bcrypt";
 import { signToken } from "../../utils/jwt";
+
+
 export const registerUser = async (res: Response, name: string, email: string, password: string, role: UserRole) => {
     // 1. Validation
     if (!name || !email || !password || !role) {
